@@ -39,7 +39,7 @@ public class PlatformerPlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            //playerAudio.PlayOneShot(jumpSound, 1.0f);
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
     }
 

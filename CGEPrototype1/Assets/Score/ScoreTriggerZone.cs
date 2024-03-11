@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class ScoreTriggerZone : MonoBehaviour
 {
+    
     bool active = true;
+
+    public AudioClip zoneSound;
+    private AudioSource playerAudio;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if(active && collision.gameObject.tag == "Player") { 
+        playerAudio = GetComponent<AudioSource>();
+
+        if (active && collision.gameObject.tag == "Player") { 
         active = false;
-        ScoreManager.score++; 
+        ScoreManager.score++;
+            playerAudio.PlayOneShot(zoneSound, 1.0f);
+
         }
     }
 }
