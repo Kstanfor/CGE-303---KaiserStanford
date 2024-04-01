@@ -19,11 +19,15 @@ public class PlatformerPlayerController : MonoBehaviour
     public AudioClip jumpSound;
     private AudioSource playerAudio;
 
+    private Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         playerAudio = GetComponent<AudioSource>();
+
+        animator = GetComponent<Animator>();
 
         if(groundCheck == null)
         {
@@ -47,7 +51,12 @@ public class PlatformerPlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
 
+        animator.SetFloat("xVelocityAbs", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("yVelocity", rb.velocity.y);
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+        animator.SetBool("onGround", isGrounded);
 
         if(horizontalInput > 0)
         {
