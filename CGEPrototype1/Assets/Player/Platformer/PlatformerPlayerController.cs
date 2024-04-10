@@ -49,13 +49,15 @@ public class PlatformerPlayerController : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
+        
+
         if(horizontalInput > 0)
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else if(horizontalInput < 0)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.rotation = Quaternion.Euler(0, 100, 0);
         }
     }
 }
