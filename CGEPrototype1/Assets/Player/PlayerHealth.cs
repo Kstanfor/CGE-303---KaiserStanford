@@ -18,9 +18,16 @@ public class PlayerHealth : MonoBehaviour
     public static bool hitRecently = false;
 
     public float hitRecoveryTime = 0.2f;
+
+    //Audio
+    private AudioSource playerAudio;
+    public AudioClip playerHitSound;
+    public AudioClip playerDeathSound;
     // Start is called before the first frame update
     void Start()
     {
+        playerAudio = GetComponent<AudioSource>();
+
         rb = GetComponent<Rigidbody2D>();
 
         if (rb == null)
@@ -71,11 +78,16 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
+        else
+        {
+            playerAudio.PlayOneShot(playerHitSound);
+        }
 
     }
 
     public void Die()
     {
+        playerAudio.PlayOneShot(playerDeathSound);
         ScoreManager.gameOver = true;
 
         GameObject deathEffect = Instantiate(playerDeathEffect, transform.position, Quaternion.identity);
