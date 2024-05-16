@@ -3401,7 +3401,7 @@ MonoBehaviour:
   health: 100
   healthBar: {fileID: 1394360711}
   knockbackForce: 5
-  playerDeathEffect: {fileID: 0}
+  playerDeathEffect: {fileID: 8498276738630330137, guid: a6a6f76c619024f4c94c524650f75b26, type: 3}
   hitRecoveryTime: 0.2
 --- !u!1 &1278994969 stripped
 GameObject:
@@ -3853,6 +3853,7 @@ GameObject:
   - component: {fileID: 1414704392}
   - component: {fileID: 1414704391}
   - component: {fileID: 1414704390}
+  - component: {fileID: 1414704394}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3942,6 +3943,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1414704394
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414704389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1452794008
 GameObject:
   m_ObjectHideFlags: 0

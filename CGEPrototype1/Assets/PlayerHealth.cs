@@ -78,6 +78,9 @@ public class PlayerHealth : MonoBehaviour
     {
         ScoreManager.gameOver = true;
 
+        GameObject deathEffect = Instantiate(playerDeathEffect, transform.position, Quaternion.identity);
+        Destroy(deathEffect, 2f);
+
         gameObject.SetActive(false);
     }
 
