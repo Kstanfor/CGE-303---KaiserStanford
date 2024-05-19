@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -12,11 +13,16 @@ public class Enemy : MonoBehaviour
 
     public int damage = 10;
 
+
+
+ 
+
+   
     private void Start()
     {
         healthBar = GetComponentInChildren<DisplayBar>();
 
-        if (healthBar != null )
+        if (healthBar == null )
         {
             Debug.LogError("HealthBar (DisplayBar script) not found");
             return;

@@ -16,10 +16,11 @@ public class DisplayBar : MonoBehaviour
         slider.value = value;
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
+        
     }
 
     // Update is called once per frame
-   public void SetMaxValue(float value)
+   public void SetMaxValue(int value)
     {
         slider.maxValue = value;
         slider.value = value;
